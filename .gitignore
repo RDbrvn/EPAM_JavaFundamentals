@@ -1,5 +1,5 @@
 # IntelliJ IDEA project files#
-.iml
+*.iml
 .idea
 classes
 out

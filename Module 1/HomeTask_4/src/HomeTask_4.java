@@ -25,7 +25,7 @@ public class HomeTask_4 {
         }
 
         for (int i = 0; i < n; i++) {
-            sum_a[i] = a[i] + a[2*n - 1 - i];
+            sum_a[i] = a[i] + a[2 * n - 1 - i];
 
             if (sum_a[i] > max) max = sum_a[i];
         }
