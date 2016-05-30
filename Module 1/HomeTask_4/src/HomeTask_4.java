@@ -1,6 +1,3 @@
-import java.awt.geom.Arc2D;
-import java.awt.geom.CubicCurve2D;
-import java.util.DoubleSummaryStatistics;
 import java.util.Random;
 
 /* Даны действительные числа a_1, a_2, ..., a_2n.
@@ -11,7 +8,8 @@ public class HomeTask_4 {
         double[] a;
         double[] sum_a;
         double max = Double.NEGATIVE_INFINITY;
-        int n = 50;
+        int n = 1000000;
+        double sign_a;
 
         a = new double[2 * n];
         sum_a = new double[n];
@@ -19,9 +17,10 @@ public class HomeTask_4 {
         Random r = new Random();
 
         for (int i = 0; i < 2 * n; i++) {
-            // a[i] = r.nextDouble();
-            a[i] = (Double.MIN_VALUE / 2 + 1) + r.nextDouble() * ((Double.MAX_VALUE / 2 - 1) - (Double.MIN_VALUE / 2 + 1)); // с математической точки зрения это более верно, поскольку диапазон действительных чисел шире чем [0, 1);
-            // System.out.println(i + " " + a[i]);
+            sign_a = r.nextBoolean() ? 1.0 : -1.0;
+            //a[i] = sign_a * r.nextDouble();
+            a[i] = sign_a * (1E6 * r.nextDouble());
+            //System.out.println(i + " " + a[i]);
         }
 
         for (int i = 0; i < n; i++) {
